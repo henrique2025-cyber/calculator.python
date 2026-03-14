@@ -1,0 +1,13 @@
+# Arquivo: calculadora_formulas.py
+
+print("--- Calculadora de Fórmulas do Mestre ---")
+formula = input("Digite a fórmula (ex: a + b * c): ")
+
+a = float(input("Valor de a: "))
+b = float(input("Valor de b: "))
+c = float(input("Valor de c: "))
+
+# A mágica do eval transforma o texto em conta
+resultado = eval(formula)
+
+print(f"O resultado da sua fórmula é: {resultado}") 
