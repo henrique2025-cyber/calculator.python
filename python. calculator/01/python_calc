@@ -1,0 +1,22 @@
+# Arquivo: calculadora_universal.py
+import sympy as sp
+
+# Definindo que x é a nossa incógnita
+x = sp.symbols('x')
+
+print("--- Calculadora Universal do Mestre Mega-Mega ---")
+entrada = input("Digite a equação (ex: 2*(x + 3) = 15): ")
+
+try:
+    # Lógica para tratar o sinal de '=' e isolar o X
+    if "=" in entrada:
+        lado_esq, lado_dir = entrada.split("=")
+        equacao = sp.parse_expr(lado_esq) - sp.parse_expr(lado_dir)
+    else:
+        equacao = sp.parse_expr(entrada)
+
+    resultado = sp.solve(equacao, x)
+    print(f"O valor de x é: {resultado}")
+
+except Exception as e:
+    print(f"Erro na conta: {e}")
